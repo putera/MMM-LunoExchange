@@ -23,11 +23,11 @@ module.exports = NodeHelper.create(
         var priceBuy = 0.00; var priceSell = 0.00; var lastTrade = 0.00;
         currency = currency.toUpperCase();
 
-        var url = 'https://www.luno.com/ajax/1/ticker?pair=XBT' + currency;
+        var urlTicker = 'https://www.luno.com/ajax/1/ticker?pair=XBT' + currency;
 
         async.parallel({
             market: function(callback) {
-                request({ url: url, method: 'GET' }, function(error, response, body) {
+                request({ url: urlTicker, method: 'GET' }, function(error, response, body) {
                     if (!error && response.statusCode == 200) {
                         callback(error, body);
                     }
@@ -41,9 +41,9 @@ module.exports = NodeHelper.create(
 
             var r = JSON.parse(result.market);
             if (r) {
-                priceBuy = r.bid.toFixed(2);
-                priceSell = r.ask.toFixed(2);
-                lastTrade = r.last_trade.toFixed(2);
+                priceBuy = r.bid;
+                priceSell = r.ask;
+                lastTrade = r.last_trade;
             }
 
             var price = {buy: priceBuy, sell: priceSell, last_trade: lastTrade};
