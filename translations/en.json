@@ -1,0 +1,7 @@
+{
+	"TITLE" : "Luno BTC Exchange",
+	"ERROR_DATA_LOAD" : "- BTC price not available at the moment -",
+	"BUY" : "Buy",
+	"SELL" : "Sell",
+	"LAST_TRADE" : "Last Trade"
+}
