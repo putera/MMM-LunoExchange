@@ -1,5 +1,5 @@
 {
-	"TITLE" : "Luno BTC Exchange",
+	"LUNO_TITLE" : "Luno BTC Exchange",
 	"ERROR_DATA_LOAD" : "- Gagal dapatkan harga BTC buat masa ini -",
 	"BUY" : "Beli",
 	"SELL" : "Jual",

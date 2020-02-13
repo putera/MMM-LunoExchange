@@ -76,10 +76,16 @@ Module.register("MMM-LunoExchange",
                 lastPriceSell = '-';
             }
 
+            if (typeof lastTrade != "undefined") {
+                lastTrade = currency + ' ' + lastTrade.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            } else {
+                lastTrade = '-';
+            }
+
             // Title
             var elt = document.createElement('div');
             elt.className = 'normal dimmed';
-            elt.innerHTML = this.translate("TITLE");
+            elt.innerHTML = this.translate("LUNO_TITLE");
 
             // Buy
             var elbuy = document.createElement('div');
@@ -110,13 +116,13 @@ Module.register("MMM-LunoExchange",
             // Trade
             var eltrade = document.createElement('div');
             eltrade.style.width = '100%';
-            var elt = document.createElement('div');
-            elt.className = 'small dimmed';
-            elt.innerHTML = this.translate("LAST_TRADE") + ':';
+            var eltr = document.createElement('div');
+            eltr.className = 'small dimmed';
+            eltr.innerHTML = this.translate("LAST_TRADE") + ':';
             var ellt = document.createElement('div');
             ellt.className = 'medium bright';
             ellt.innerHTML = lastTrade;
-            eltrade.appendChild(elt);
+            eltrade.appendChild(eltr);
             eltrade.appendChild(ellt);
 
             w.appendChild(elt);
