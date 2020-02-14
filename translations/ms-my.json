@@ -3,5 +3,6 @@
 	"ERROR_DATA_LOAD" : "- Gagal dapatkan harga BTC buat masa ini -",
 	"BUY" : "Beli",
 	"SELL" : "Jual",
-	"LAST_TRADE" : "Terakhir"
+	"LAST_TRADE" : "Terakhir",
+	"BTC_PRICE" : "Harga BTC"
 }

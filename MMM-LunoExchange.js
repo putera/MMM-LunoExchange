@@ -59,6 +59,7 @@ Module.register("MMM-LunoExchange",
         var lastPriceBuy = data.buy;
         var lastPriceSell = data.sell;
         var lastTrade = data.last_trade;
+        var btcPrice = data.btc_price;
 
         var w = document.createElement("div");
 
@@ -84,7 +85,7 @@ Module.register("MMM-LunoExchange",
 
             // Title
             var elt = document.createElement('div');
-            elt.className = 'normal dimmed';
+            elt.className = 'normal dimmed luno_title';
             elt.innerHTML = this.translate("LUNO_TITLE");
 
             // Buy
@@ -105,7 +106,7 @@ Module.register("MMM-LunoExchange",
             elsell.style.width = '50%';
             elsell.style.float = 'right';
             var els = document.createElement('div');
-            els.className = 'small dimmed buy-title';
+            els.className = 'small dimmed';
             els.innerHTML = this.translate("SELL") + ':';
             var elsp = document.createElement('div');
             elsp.className = 'medium bright';
@@ -115,7 +116,8 @@ Module.register("MMM-LunoExchange",
 
             // Trade
             var eltrade = document.createElement('div');
-            eltrade.style.width = '100%';
+            eltrade.style.width = '50%';
+            eltrade.style.float = 'left';
             var eltr = document.createElement('div');
             eltr.className = 'small dimmed';
             eltr.innerHTML = this.translate("LAST_TRADE") + ':';
@@ -125,10 +127,24 @@ Module.register("MMM-LunoExchange",
             eltrade.appendChild(eltr);
             eltrade.appendChild(ellt);
 
+            // BTC Price
+            var elbtcprice = document.createElement('div');
+            elbtcprice.style.width = '50%';
+            elbtcprice.style.float = 'right';
+            var elbtcp = document.createElement('div');
+            elbtcp.className = 'small dimmed';
+            elbtcp.innerHTML = this.translate("BTC_PRICE") + ':';
+            var el_btcp = document.createElement('div');
+            el_btcp.className = 'medium bright';
+            el_btcp.innerHTML = btcPrice;
+            elbtcprice.appendChild(elbtcp);
+            elbtcprice.appendChild(el_btcp);
+
             w.appendChild(elt);
             w.appendChild(elbuy);
             w.appendChild(elsell);
             w.appendChild(eltrade);
+            w.appendChild(elbtcprice);
         }
         else
         {
